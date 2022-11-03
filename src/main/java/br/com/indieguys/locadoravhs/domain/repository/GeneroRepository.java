@@ -10,6 +10,5 @@ import br.com.indieguys.locadoravhs.domain.entity.Genero;
 @Repository
 public interface GeneroRepository extends JpaRepository<Genero, Long>{
 
-	// Alterar para pegar apenas os ativos
-	List<Genero> findAll();
+	List<Genero> findByAtivoTrue();
 }

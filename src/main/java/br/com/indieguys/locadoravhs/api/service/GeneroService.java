@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.indieguys.locadoravhs.api.dto.GeneroDTO;
 import br.com.indieguys.locadoravhs.api.dto.mapper.GeneroMapper;
+import br.com.indieguys.locadoravhs.api.exception.NotFoundException;
 import br.com.indieguys.locadoravhs.domain.entity.Genero;
 import br.com.indieguys.locadoravhs.domain.repository.GeneroRepository;
 import lombok.RequiredArgsConstructor;
@@ -27,16 +28,15 @@ public class GeneroService {
 		Optional<Genero> optionalEntity = repository.findById(id);
 
 		if (!optionalEntity.isPresent()) {
-			// Adicionar esse tratamento
-			// throw new NotFoundException("Gênero não encontrado (Id = " + id + ")");
+			throw new NotFoundException("Gênero não encontrado (Id = " + id + ")");
 		}
 
 		return optionalEntity.get();
 	}
 
-	public List<GeneroDTO> getAll() {
+	public List<GeneroDTO> getAtivos() {
 		List<GeneroDTO> generoDTOList = new ArrayList<>();
-		List<Genero> generoList = repository.findAll();
+		List<Genero> generoList = repository.findByAtivoTrue();
 		generoList.forEach(genero -> generoDTOList.add(mapper.toDTO(genero)));
 		return generoDTOList;
 	}

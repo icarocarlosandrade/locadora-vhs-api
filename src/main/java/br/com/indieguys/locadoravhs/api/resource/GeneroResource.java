@@ -19,8 +19,8 @@ public class GeneroResource {
 	private final GeneroService service;
 
 	@GetMapping
-	public List<GeneroDTO> getGenero() {
-		return service.getAll();
+	public List<GeneroDTO> getAtivos() {
+		return service.getAtivos();
 	}
 	
 	@GetMapping("/{id}")
