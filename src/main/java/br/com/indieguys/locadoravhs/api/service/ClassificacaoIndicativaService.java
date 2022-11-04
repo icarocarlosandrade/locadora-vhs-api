@@ -34,9 +34,9 @@ public class ClassificacaoIndicativaService {
 		return optionalEntity.get();
 	}
 
-	public List<ClassificacaoIndicativaDTO> getAtivos() {
+	public List<ClassificacaoIndicativaDTO> getAll() {
 		List<ClassificacaoIndicativaDTO> classificacaoIndicativaDTOList = new ArrayList<>();
-		List<ClassificacaoIndicativa> classificacaoIndicativaList = repository.findByAtivoTrue();
+		List<ClassificacaoIndicativa> classificacaoIndicativaList = repository.findAll();
 		classificacaoIndicativaList.forEach(classificacaoIndicativa -> classificacaoIndicativaDTOList.add(mapper.toDTO(classificacaoIndicativa)));
 		return classificacaoIndicativaDTOList;
 	}

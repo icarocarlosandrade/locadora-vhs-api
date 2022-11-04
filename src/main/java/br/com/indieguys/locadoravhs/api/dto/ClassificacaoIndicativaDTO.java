@@ -6,6 +6,9 @@ import lombok.Data;
 public class ClassificacaoIndicativaDTO {
 
 	private Long id;
+	private String faixaEtariaRecomendada;
 	private String descricao;
-	private boolean ativo;
+	private String violencia;
+	private String sexoNudez;
+	private String drogas;
 }

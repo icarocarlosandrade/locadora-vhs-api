@@ -12,7 +12,7 @@ import br.com.indieguys.locadoravhs.api.service.ClassificacaoIndicativaService;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/classificacaoIndicativa")
+@RequestMapping("/classificacao-indicativa")
 @RequiredArgsConstructor
 public class ClassificacaoIndicativaResource {
 
@@ -20,7 +20,7 @@ public class ClassificacaoIndicativaResource {
 
 	@GetMapping
 	public List<ClassificacaoIndicativaDTO> getAtivos() {
-		return service.getAtivos();
+		return service.getAll();
 	}
 	
 	@GetMapping("/{id}")

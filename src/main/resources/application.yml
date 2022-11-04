@@ -16,7 +16,7 @@ spring:
       ddl-auto: none # Desabilita a auto-criação do hibernate que cria as tabelas com base nas entities
   sql:
     init:
-      mode: always # Para que o Spring utilize os scripts de inicialização da base de dados (schema.sql e data.sql)
+      mode: never  # Para que o Spring utilize os scripts de inicialização da base de dados (schema.sql e data.sql)
       continue-on-error: true # Quando o banco já foi inicializado ele dá erro na próxima vez que tentar inicializar
   main:
     banner-mode: off # Desabilita o banner do spring no output
