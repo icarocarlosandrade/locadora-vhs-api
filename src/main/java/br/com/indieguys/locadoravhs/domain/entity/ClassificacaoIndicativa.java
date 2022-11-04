@@ -17,9 +17,18 @@ public class ClassificacaoIndicativa {
 	@Column(nullable = false, updatable = false)
 	private Long id;
 
+	@Column(nullable = false, name = "faixa_etaria_recomendada")
+	private String faixaEtariaRecomendada;
+	
 	@Column(nullable = false)
 	private String descricao;
-
+	
 	@Column(nullable = false)
-	private boolean ativo;
+	private String violencia;
+	
+	@Column(nullable = false, name="sexo_nudez")
+	private String sexoNudez;
+	
+	@Column(nullable = false)
+	private String drogas;
 }
