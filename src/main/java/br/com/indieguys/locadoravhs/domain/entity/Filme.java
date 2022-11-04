@@ -27,6 +27,7 @@ public class Filme {
 
 	private String diretor;
 
+	@Column(name="ano_lancamento")
 	private String anoLancamento;
 	
 	@OneToOne(cascade = CascadeType.ALL)

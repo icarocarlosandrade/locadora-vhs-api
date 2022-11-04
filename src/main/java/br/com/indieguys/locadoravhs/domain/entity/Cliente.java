@@ -32,6 +32,7 @@ public class Cliente {
 
 	private String telefone;
 
+	@Column(name="data_nascimento")
 	private Date dataNascimento;
 	
 	@Column(nullable = false)
