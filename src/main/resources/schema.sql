@@ -23,10 +23,10 @@ ALTER SEQUENCE public.fita_id_seq OWNED BY public.fita.id;
 
 CREATE TABLE public.filme (
     id integer NOT NULL,
-    nome character varying(50) NOT NULL,
-    duracao character varying(3),
-    diretor character varying(100),
-    ano_lancamento character varying(4),
+    nome text NOT NULL,
+    duracao text,
+    diretor text,
+    ano_lancamento text,
     genero_id integer NOT NULL,
     classificacao_indicativa_id integer NOT NULL
 );
@@ -49,7 +49,7 @@ ALTER SEQUENCE public.filme_id_seq OWNED BY public.filme.id;
 
 CREATE TABLE public.genero (
     id integer NOT NULL,
-    descricao character varying(20) NOT NULL,
+    descricao text NOT NULL,
     ativo boolean DEFAULT true NOT NULL
 );
 
@@ -71,8 +71,11 @@ ALTER SEQUENCE public.genero_id_seq OWNED BY public.genero.id;
 
 CREATE TABLE public.classificacao_indicativa (
     id integer NOT NULL,
-    descricao character varying(20) NOT NULL,
-    ativo boolean DEFAULT true NOT NULL
+    faixa_etaria_recomendada text NOT NULL,
+    descricao text NOT NULL,
+    violencia text NOT NULL,
+    sexo_nudez text NOT NULL,
+    drogas text NOT NULL
 );
 
 ALTER TABLE public.classificacao_indicativa OWNER TO postgres;
@@ -92,10 +95,10 @@ ALTER SEQUENCE public.classificacao_indicativa_id_seq OWNED BY public.classifica
 
 CREATE TABLE public.cliente (
     id integer NOT NULL,
-    nome character varying(150) NOT NULL,
-    cpf character varying(11) NOT NULL,
-    email character varying(100),
-    telefone character varying(11),
+    nome text NOT NULL,
+    cpf text NOT NULL,
+    email text,
+    telefone text,
     data_nascimento date,
     ativo boolean DEFAULT true NOT NULL,
     endereco_id integer NOT NULL
@@ -121,11 +124,11 @@ ALTER SEQUENCE public.cliente_id_seq OWNED BY public.cliente.id;
 
 CREATE TABLE public.endereco (
     id integer NOT NULL,
-    rua character varying(150) NOT NULL,
-    numero character varying(10) NOT NULL,
-    complemento character varying(150),
-    cep character varying(10),
-    bairro character varying(50)
+    rua text NOT NULL,
+    numero text NOT NULL,
+    complemento text,
+    cep text,
+    bairro text
 );
 
 
